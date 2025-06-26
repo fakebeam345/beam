@@ -13,10 +13,12 @@
             font-family: 'Kanit';
             src: url('fonts/Kanit-Regular.ttf') format('truetype');
         }
+
         body {
             font-family: 'Kanit', sans-serif;
             background-color: #bebebe;
         }
+
         footer {
             width: 100%;
         }
@@ -43,8 +45,11 @@
                             ข้อมูลเพิ่มเติม
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">สมัครสมาชิก</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                           <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalSignIn">สมัครสมาชิก</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="#">หน้าหลัก</a></li>
                             <li><a class="dropdown-item" href="#">ค้นหาบทความ</a></li>
                             <li><a class="dropdown-item" href="#">อัลบั้มรูปภาพ</a></li>
@@ -59,7 +64,7 @@
                         <a class="nav-link" href="#"><i class="bi bi-house-door-fill"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">เข้าสู่ระบบ</a>
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">เข้าสู่ระบบ</a>
                     </li>
                 </ul>
             </div>
@@ -99,28 +104,30 @@
     </div>
 
     <!-- เมนูหน่วยงาน -->
-    <div class="container my-3 bg-light py-3">
-        <ul class="nav justify-content-center flex-wrap">
+    <div class="container my-3 bg-white py-3">
+        <ul class="nav d-flex flex-column flex-md-row justify-content-center">
             <li class="nav-item m-1">
-                <a class="nav-link btn btn-secondary" href="#">หน่วยงานการศึกษา</a>
+                <a class="nav-link btn btn-secondary w-100 w-md-auto" href="#">หน่วยงานการศึกษา</a>
             </li>
             <li class="nav-item m-1">
-                <a class="nav-link btn btn-secondary" href="#">ฝ่ายบริหารทรัพยากร</a>
+                <a class="nav-link btn btn-secondary w-100 w-md-auto" href="#">ฝ่ายบริหารทรัพยากร</a>
             </li>
             <li class="nav-item m-1">
-                <a class="nav-link btn btn-secondary" href="#">ฝ่ายวิชาการ</a>
+                <a class="nav-link btn btn-secondary w-100 w-md-auto" href="#">ฝ่ายวิชาการ</a>
             </li>
             <li class="nav-item m-1">
-                <a class="nav-link btn btn-secondary" href="#">ฝ่ายแผนงานและความร่วมมือ</a>
+                <a class="nav-link btn btn-secondary w-100 w-md-auto" href="#">ฝ่ายแผนงานและความร่วมมือ</a>
             </li>
             <li class="nav-item m-1">
-                <a class="nav-link btn btn-secondary" href="#">ฝ่ายพัฒนากิจการนักเรียนนักศึกษา</a>
+                <a class="nav-link btn btn-secondary w-100 w-md-auto" href="#">ฝ่ายพัฒนากิจการนักเรียนนักศึกษา</a>
             </li>
             <li class="nav-item m-1">
-                <a class="nav-link btn btn-secondary" href="#">ITA/ข้อมูลสาธารณะ</a>
+                <a class="nav-link btn btn-secondary w-100 w-md-auto" href="#">ITA/ข้อมูลสาธารณะ</a>
             </li>
         </ul>
     </div>
+
+
 
     <!-- ส่วน 3 คอลัมน์ -->
     <div class="container">
@@ -161,7 +168,7 @@
             <!-- ขวา -->
             <div class="col-12 col-md-3">
                 <div class="bg-light p-3 rounded text-center">
-                    Right 
+                    Right
                 </div>
             </div>
         </div>
@@ -171,6 +178,79 @@
     <footer class="text-center bg-info text-white py-3 mt-3">
         จัดทำโดย นายกรณ์ดนัย อินทรโอสถ สท4/1 001.
     </footer>
+
+
+    <!--Login modal-->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <!--<div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>-->
+            </div>
+        </div>
+    </div>
+
+<!-- Sign In Modal -->
+<div class="modal fade" id="modalSignIn" tabindex="-1" aria-labelledby="modalSignInLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalSignInLabel">สมัครสมาชิก</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="inputName" class="form-label">ชื่อจริง</label>
+            <input type="text" class="form-control" id="inputName">
+          </div>
+          <div class="mb-3">
+            <label for="inputName" class="form-label">นามสกุล</label>
+            <input type="text" class="form-control" id="inputName">
+          </div>
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail">
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword">
+          </div>
+          <button type="submit" class="btn btn-success">สมัครสมาชิก</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 </body>
 
